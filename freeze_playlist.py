@@ -1,5 +1,4 @@
 import spotipy
-import os
 import argparse
 from spotipy.oauth2 import SpotifyOAuth
 
@@ -7,8 +6,6 @@ from spotipy.oauth2 import SpotifyOAuth
 def create_playlist(playlist_id, new_playlist_name):
     sp = spotipy.Spotify(
         auth_manager=SpotifyOAuth(
-            # client_id=os.getenv("client_id"),
-            # client_secret=os.getenv("client_secret"),
             redirect_uri="http://127.0.0.1:9090",
             scope="playlist-read-private playlist-modify-public",
         )
